@@ -1,0 +1,1 @@
+python C:\Python33\Scripts\cxfreeze resmaker.py --include-modules re --target-dir dist
