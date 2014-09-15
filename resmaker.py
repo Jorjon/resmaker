@@ -19,7 +19,9 @@ def createEmbed(path):
     options = ""
     if ext == "ttf" and not args.disableFonts:
         options = ', fontName = "' + base + '"' + (', embedAsCFF="false"' if not args.disableEmbed else '')
-    elif ext == "xml":
+    elif ext == "png" or ext == "jpg" or ext == "jpeg":
+        options = ''
+    else:
         options = ', mimeType = "application/octet-stream"'
     return '[Embed(source = "' + path + '"' + options + ')] static public const ' + parseFile(path if args.fullPath else base + "." + ext) + ":Class;"
 
